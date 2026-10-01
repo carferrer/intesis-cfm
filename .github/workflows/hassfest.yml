@@ -1,0 +1,19 @@
+name: Hassfest
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate Home Assistant integration
+        uses: home-assistant/actions/hassfest@master

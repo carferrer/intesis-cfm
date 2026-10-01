@@ -1,0 +1,3 @@
+# This plugin release pins Home Assistant 2026.9.2.
+pytest-homeassistant-custom-component==0.13.365
+ruff==0.15.2
