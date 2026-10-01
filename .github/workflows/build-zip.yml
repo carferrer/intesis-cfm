@@ -1,0 +1,52 @@
+name: Build ZIP for HACS
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Build and verify installable ZIP
+        run: python scripts/build_zip.py
+      - name: Store ZIP for testing
+        uses: actions/upload-artifact@v7
+        with:
+          name: intesisbox-hacs
+          path: dist/intesisbox.zip
+          if-no-files-found: error
+
+  release:
+    if: github.event_name == 'release'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Check tag and build release ZIP
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: python scripts/build_zip.py --tag "$RELEASE_TAG"
+      - name: Attach ZIP to the published release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: dist/intesisbox.zip
+          fail_on_unmatched_files: true

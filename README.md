@@ -1,8 +1,55 @@
 # IntesisBox CFM para Home Assistant
 
+![IntesisBox](custom_components/intesisbox/brand/icon.png)
+
+[![Tests](https://github.com/carferrer/intesis-cfm/actions/workflows/tests.yml/badge.svg)](https://github.com/carferrer/intesis-cfm/actions/workflows/tests.yml)
+[![Hassfest](https://github.com/carferrer/intesis-cfm/actions/workflows/hassfest.yml/badge.svg)](https://github.com/carferrer/intesis-cfm/actions/workflows/hassfest.yml)
+[![HACS](https://github.com/carferrer/intesis-cfm/actions/workflows/validate.yml/badge.svg)](https://github.com/carferrer/intesis-cfm/actions/workflows/validate.yml)
+
 Integración local para interfaces IntesisBox compatibles con WMP (TCP 3310),
 basada en [hass-intesisbox de jnimmo](https://github.com/jnimmo/hass-intesisbox).
 No utiliza Intesis Cloud ni IntesisHome Cloud.
+
+## Instalar y actualizar con HACS
+
+Cuando estos cambios estén integrados en la rama principal y exista una release
+con el archivo `intesisbox.zip`:
+
+1. Abre HACS y entra en **Repositorios personalizados** desde el menú.
+2. Añade `https://github.com/carferrer/intesis-cfm` como **Integración**.
+3. Busca **IntesisBox CFM**, descárgalo y reinicia Home Assistant.
+4. Si ya tienes la integración configurada, conserva su entrada: no la elimines.
+   Para instalaciones nuevas, añade **IntesisBox** desde Dispositivos y servicios.
+
+Versión mínima declarada para esta edición: Home Assistant **2026.9.2**.
+Este repositorio se añade como repositorio personalizado; no implica su inclusión
+en el catálogo predeterminado de HACS. Evita gestionar simultáneamente dos
+repositorios HACS que instalen el mismo dominio `intesisbox`.
+
+## Comprobaciones y paquetes
+
+En cada cambio y pull request se ejecutan:
+
+- **Tests**: Ruff, formato, pruebas TCP y pruebas con HA 2026.9.2.
+- **Hassfest**: validación del manifiesto y estructura de la integración.
+- **HACS validation**: requisitos del repositorio para HACS.
+- **Build ZIP for HACS**: genera y verifica `intesisbox.zip`, disponible como
+  artefacto `intesisbox-hacs` en GitHub Actions.
+
+Hassfest y HACS también se ejecutan diariamente y pueden lanzarse manualmente.
+Renovate tiene una configuración para proponer actualizaciones de las acciones
+y requisitos del manifiesto, sin fusionarlas automáticamente. Para que actúe,
+la aplicación Renovate debe tener acceso a este repositorio.
+
+Al publicar una release, el flujo comprueba que su etiqueta (por ejemplo,
+`v2.1.0`) coincide con `manifest.json` y adjunta `intesisbox.zip`. El flujo no
+crea releases por sí mismo. El ZIP HACS contiene `manifest.json` en su raíz y
+se instala dentro de `custom_components/intesisbox`; no incluye pruebas ni el
+emulador. Para generarlo localmente: `python scripts/build_zip.py`.
+
+El código mantiene la licencia MIT de James Nimmo, incluida en `LICENSE`.
+El icono procede del [repositorio de marcas de Home Assistant](https://github.com/home-assistant/brands/tree/master/custom_integrations/intesisbox)
+y representa la marca Intesis de su titular.
 
 ## Versión 2.1.0
 
