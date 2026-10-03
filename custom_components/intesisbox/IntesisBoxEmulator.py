@@ -116,4 +116,5 @@ async def main(host, port):
     await server.serve_forever()
 
 
-asyncio.run(main("0.0.0.0", 3310))
+if __name__ == "__main__":
+    asyncio.run(main("127.0.0.1", 3310))

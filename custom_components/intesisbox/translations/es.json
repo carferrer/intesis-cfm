@@ -1,0 +1,30 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "El dispositivo ya está configurado",
+      "wrong_device": "La nueva dirección pertenece a otro dispositivo o el equipo original todavía no se ha identificado",
+      "reconfigure_successful": "Configuración actualizada",
+      "no_changes": "Sin cambios"
+    },
+    "error": {
+      "cannot_connect": "No se ha podido conectar con el dispositivo",
+      "unknown": "Error inesperado"
+    },
+    "step": {
+      "user": {
+        "title": "IntesisBox",
+        "description": "Introduce la IP o el nombre de host de tu interfaz local IntesisBox WMP.",
+        "data": {
+          "host": "Dirección del equipo"
+        }
+      },
+      "reconfigure": {
+        "title": "IntesisBox",
+        "description": "Introduce la nueva dirección del mismo dispositivo IntesisBox.",
+        "data": {
+          "host": "Dirección del equipo"
+        }
+      }
+    }
+  }
+}

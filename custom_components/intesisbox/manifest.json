@@ -1,12 +1,15 @@
 {
   "domain": "intesisbox",
   "name": "IntesisBox",
-  "version": "v2.0.1",
-  "documentation": "https://github.com/jnimmo/hass-intesisbox",
-  "issue_tracker": "https://github.com/jnimmo/hass-intesisbox/issues",
-  "dependencies": [],
-  "codeowners": ["@jnimmo"],
+  "codeowners": [
+    "@carferrer"
+  ],
   "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/carferrer/intesis-cfm",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/carferrer/intesis-cfm/issues",
   "requirements": [],
-  "iot_class": "local_polling"
+  "version": "2.1.0"
 }
