@@ -1,6 +1,6 @@
 {
   "name": "IntesisBox CFM",
-  "homeassistant": "2026.9.2",
+  "homeassistant": "2026.9.1",
   "zip_release": true,
   "filename": "intesisbox.zip"
 }
