@@ -21,7 +21,7 @@ con el archivo `intesisbox.zip`:
 4. Si ya tienes la integración configurada, conserva su entrada: no la elimines.
    Para instalaciones nuevas, añade **IntesisBox** desde Dispositivos y servicios.
 
-Versión mínima declarada para esta edición: Home Assistant **2026.9.2**.
+Versión mínima declarada para esta edición: Home Assistant **2026.9.1**.
 Este repositorio se añade como repositorio personalizado; no implica su inclusión
 en el catálogo predeterminado de HACS. Evita gestionar simultáneamente dos
 repositorios HACS que instalen el mismo dominio `intesisbox`.
@@ -30,7 +30,7 @@ repositorios HACS que instalen el mismo dominio `intesisbox`.
 
 En cada cambio y pull request se ejecutan:
 
-- **Tests**: Ruff, formato, pruebas TCP y pruebas con HA 2026.9.2.
+- **Tests**: Ruff, formato, pruebas TCP y pruebas con HA 2026.9.1.
 - **Hassfest**: validación del manifiesto y estructura de la integración.
 - **HACS validation**: requisitos del repositorio para HACS.
 - **Build ZIP for HACS**: genera y verifica `intesisbox.zip`, disponible como
@@ -53,7 +53,7 @@ y representa la marca Intesis de su titular.
 
 ## Versión 2.1.0
 
-Dirigida a Home Assistant **2026.9.2**. La configuración se realiza desde
+Dirigida a Home Assistant **2026.9.1**. La configuración se realiza desde
 **Ajustes → Dispositivos y servicios → Añadir integración → IntesisBox**,
 introduciendo la IP o el nombre de host del equipo.
 
@@ -97,7 +97,7 @@ Los comandos se reflejan cuando el dispositivo comunica su estado; no se simula
 una confirmación del equipo.
 
 Las pruebas automatizadas utilizan un servidor WMP simulado y Home Assistant
-2026.9.2; no sustituyen la validación de cada modelo físico.
+2026.9.1; no sustituyen la validación de cada modelo físico.
 
 ## Desarrollo y pruebas
 
