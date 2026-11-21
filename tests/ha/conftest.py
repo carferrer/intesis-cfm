@@ -7,11 +7,6 @@ import pytest
 from custom_components.intesisbox.intesisbox import IntesisBox
 
 
-@pytest.fixture(autouse=True)
-def enable_custom(enable_custom_integrations):
-    yield
-
-
 @pytest.fixture
 def controller():
     box = IntesisBox("192.0.2.1")

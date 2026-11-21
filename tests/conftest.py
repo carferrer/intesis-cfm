@@ -1,1 +1,1 @@
-pytest_plugins = "pytest_homeassistant_custom_component"
+"""pytest-homeassistant is loaded automatically from its pytest11 entry point."""
