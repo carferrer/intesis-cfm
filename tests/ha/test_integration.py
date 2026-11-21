@@ -1,4 +1,4 @@
-"""Exercise setup, services and entity registry compatibility on HA 2026.9.2."""
+"""Exercise setup, services and entity registry compatibility on HA 2026.11.2."""
 
 from unittest.mock import AsyncMock, patch
 
@@ -6,7 +6,7 @@ import pytest
 from homeassistant.config_entries import ConfigEntryState
 from homeassistant.const import STATE_UNAVAILABLE
 from homeassistant.helpers import entity_registry as er
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.intesisbox import async_unload_entry
 from custom_components.intesisbox.diagnostics import async_get_config_entry_diagnostics
